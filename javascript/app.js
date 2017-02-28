@@ -33,9 +33,14 @@ $(document).ready(function() {
 		searchTerm = $("#searchTerm").val().trim();
 		number = $("#number").val().trim();
 
-		var nytURL = "https://api.nytimes.com/svc/search/v2/articlesearch.json" + "?" + apiKey;
+		var nytURL = "https://api.nytimes.com/svc/search/v2/articlesearch.json" + "?=" + apiKey 
+		+ "&q=" + searchTerm + "&qf=" number;
 
-		
+		// if startYear > 0 nytURL + "&begin_date=" + startYear + "0101"
+
+		// if endYear > 0 nytURL + "&end_date=" + endYear + "1231"
+
+
 
 
 	});
