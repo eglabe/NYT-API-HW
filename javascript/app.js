@@ -23,46 +23,32 @@ $(document).ready(function() {
 
 	    		articleCounter++;
 
-	    		var story = $("<div>").addClass("story");
+	    		var story = $("<div>").addClass("story container");
 	    		story.attr("id", "article-num-" + articleCounter);
 	    		$("#article-display").append(story);
-
-	    		var artLink = apiData.response.docs[i].web_url;
 
 				if (apiData.response.docs[i].headline !== "null") {
 					$("#article-num-" + articleCounter)
 				  		.append(
-				    		"<h3 class='articleHeadline'><span class='itemNumber'>" +
-				    		articleCounter + "</span><strong><a href='" + artLink + "'target='_blank'>" +
+				    		"<h3 class='articleHeadline'><span class='itemNumber'>" + articleCounter + " " + 
+				    		"</span><strong><a href='" + apiData.response.docs[i].web_url + "'target='_blank'>" +
 				    		apiData.response.docs[i].headline.main + "</a></strong></h3>");
-
-				console.log(apiData.response.docs[i].headline.main);
-				}
-
-				
+				}				
 
 				if (apiData.response.docs[i].byline && apiData.response.docs[i].byline.original) {
 					$("#article-num-" + articleCounter)
 				  		.append("<h5>" + apiData.response.docs[i].byline.original + "</h5>");
-
-				console.log(apiData.response.docs[i].byline.original);
 				}
 
+				if (apiData.response.docs[i].snippet !== "null") {
+					$("#article-num-" + articleCounter)
+						.append("<h5>" + apiData.response.docs[i].snippet + "</h5>");
+				}
 
-				$("#article-num-" + articleCounter)
-					.append("<h5>" + apiData.response.docs[i].snippet + "</h5>");
-
-				$("#article-num-" + articleCounter)
-					.append("<h5>Section: " + apiData.response.docs[i].section_name + "</h5>");
-				
-				$("#article-num-" + articleCounter)
-					.append("<h5>" + apiData.response.docs[i].pub_date + "</h5>");
-				
-				$("#article-num-" + articleCounter)
-					.append(
-						"<a href='" + apiData.response.docs[i].web_url + "'>" +
-						apiData.response.docs[i].web_url + "</a>"
-					);
+				if (apiData.response.docs[i].pub_date !== "null") {
+					$("#article-num-" + articleCounter)
+						.append("<h5>" + apiData.response.docs[i].pub_date + "</h5>");
+				}
 
 	    	}
 	    });
