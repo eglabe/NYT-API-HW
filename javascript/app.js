@@ -17,27 +17,49 @@ $(document).ready(function() {
 		$.ajax({
 	    url: url,
 	    method: "GET"
-	    }).done(function(response) {
-
-	    	var results = response.data;
+	    }).done(function(apiData) {
 	    	
 	    	for (var i = 0; i < numArticles; i++) {
 
 	    		articleCounter++;
 
-	    		var link = results[i].docs.web_url;
-	    		var headline = results[i].docs.headline.main;
-	    		var snippet = results[i].docs.snippet;
-	    		var date = results[i].docs.pub_date;
+	    		// var link = results[i].docs.web_url;
+	    		// var headline = results[i].docs.headline.main;
+	    		// var snippet = results[i].docs.snippet;
+	    		// var date = results[i].docs.pub_date;
 
 	    		var story = $("<div>").addClass("story");
 	    		story.attr("id", "article-num-" + articleCounter);
 	    		$("#article-display").append(story);
 
-	    		story.append(link).append(headline).append(snippet).append(date);
+				if (apiData.response.docs[i].headline !== "null") {
+					$("#article-num-" + articleCounter)
+				  		.append(
+				    		"<h3 class='articleHeadline'><span class='label label-primary'>" +
+				    		articleCounter + "</span><strong> " +
+				    		apiData.response.docs[i].headline.main + "</strong></h3>");
+
+				console.log(apiData.response.docs[i].headline.main);
+				}
+
+				if (apiData.response.docs[i].byline && apiData.response.docs[i].byline.original) {
+					$("#article-num-" + articleCounter)
+				  		.append("<h5>" + apiData.response.docs[i].byline.original + "</h5>");
+
+				console.log(apiData.response.docs[i].byline.original);
+				}
+
+				$("#article-display-" + articleCounter)
+					.append("<h5>Section: " + apiData.response.docs[i].section_name + "</h5>");
+				$("#article-display-" + articleCounter)
+					.append("<h5>" + apiData.response.docs[i].pub_date + "</h5>");
+				$("#article-display-" + articleCounter)
+					.append(
+						"<a href='" + apiData.response.docs[i].web_url + "'>" +
+						apiData.response.docs[i].web_url + "</a>"
+					);
 
 	    	}
-
 	    });
 
 	}
