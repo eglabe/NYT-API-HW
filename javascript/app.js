@@ -80,24 +80,15 @@ $(document).ready(function() {
     	  nytURL = nytURL + "&end_date=" + endYear + "1231";
 		}
 
-		// if (number > 0) {
-		// 	nytURL = nytURL + "&qf=" + number;
-		// }
-		// console.log("num " + nytURL);
-
-		// if (startYear > 0) {
-		// 	nytURL = nytURL + "&begin_date=" + startYear + "0101";
-		// }
-		// console.log("strt " + nytURL);
-
-		// if (endYear > 0) {
-		// 	nytURL = nytURL + "&end_date=" + endYear + "1231";
-		// }
-		// console.log("end " + nytURL);
-
 		getResults(number, nytURL);
 
 	});
 
+
+	// This button clears the top articles section
+	$("#clearBtn").on("click", function() {
+		articleCounter = 0;
+		$("#article-display").empty();
+});
 
 });

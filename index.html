@@ -17,16 +17,24 @@
 
 <div id="parameters" class="container">
 	Search Term:<br>
-	<input type="text" name="" id="searchTerm"><br>
+	<input type="text" name="term" id="searchTerm" class="input"><br>
+
 	Number of Records Retrieved:<br>
-	<input type="text" name="" id="number"><br>
+	<select type="text" name="number" id="number" class="input">
+		<option value="1">1</option>
+		<option value="5" selected>5</option>
+		<option value="10">10</option>
+	</select><br>
+
 	Start Year (Optional):<br>
-	<input type="text" name="" id="startYear"><br>
+	<input type="text" name="start" id="startYear" class="input"><br>
+
 	End Year (Optional):<br>
-	<input type="text" name="" id="endYear"><br>
+	<input type="text" name="end" id="endYear" class="input"><br>
+
 	<div id="buttons">
-		<button id="searchBtn">Search</button>
-		<button id="clearBtn">Clear Results</button>
+		<button class= "btn" id="searchBtn">Search</button>
+		<button class= "btn" id="clearBtn">Clear Results</button>
 	</div>
 </div>
 

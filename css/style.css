@@ -6,17 +6,41 @@ header {
 	padding: 50px;
 	border-radius: 15px;
 	margin-bottom: 20px;
+	margin-top: 5px;
 }
 
 #parameters {
 	border: 3px solid #DCDCDC;
 	border-radius: 15px;
 	margin-bottom: 20px;
+	padding: 20px;
+	line-height: 20px;
+	width: 60%;
+}
 
+.input {
+	width: 100%;
+	height: 30px;
+	border: 2px solid #DCDCDC;
+	border-radius: 5px;
+	padding-left: 5px;
+}
+
+button {
+	margin-top: 10px;
 }
 
 .story {
 	background-color: #D3D3D3;
 	border-radius: 15px;
 	margin-bottom: 20px;
+}
+
+a {
+	color: #696969;
+}
+
+a:hover {
+	text-decoration: none;
+	color: darkred;
 }
