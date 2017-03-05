@@ -38,7 +38,7 @@ $(document).ready(function() {
 	    		story.attr("id", "article-num-" + articleCounter);
 	    		$("#article-display").append(story);
 
-	    		// check if the response.doc[i] objects exists
+	    		// check if the response.doc[i] object exists
 	    		if(apiData.response.docs[i] !== undefined){
 	    			// 
 					if (apiData.response.docs[i].headline !== null) {
@@ -102,7 +102,7 @@ $(document).ready(function() {
 	});
 
 
-	// This button clears the top articles section
+	// this button clears the previous articles
 	$("#clearBtn").on("click", function() {
 		articleCounter = 0;
 		$("#article-display").empty();
