@@ -8,7 +8,7 @@ $(document).ready(function() {
 	var endYear = 0;
 
 	// stores the NYT API key
-	var apiKey = "b9f91d369ff59547cd47b931d8cbc56b:0:74623931";
+	var apiKey = "016580a022f047d4b377b3844f6ae813";
 
 	// stores the base of the URL needed for the API query, user terms will be added
 	var urlBase = "https://api.nytimes.com/svc/search/v2/articlesearch.json?api-key=" +
@@ -121,7 +121,7 @@ $(document).ready(function() {
 
 	// this button clears the previous articles, and resets the article counter
 	$("#clearBtn").on("click", function() {
-		
+
 		articleCounter = 0;
 		$("#article-display").empty();
 });
