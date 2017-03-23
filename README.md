@@ -1,2 +1,2 @@
-# NYT-API-HW
-Week 7 HW: Create a New York Times search using their API
+# New York Times Search
+A simple searching tool using the New York Times API.
